@@ -21,7 +21,7 @@ const RegistrationPage = () => {
       ...prevValues,
       [name]: value,
     }));
-  };
+  e};
 
   const handleSubmit = (e) => {
     e.preventDefault();
