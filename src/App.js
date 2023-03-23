@@ -9,19 +9,19 @@ import {
   Link,
   Page
 } from "govuk-react";
-
+//Hello Luka..
 const RegistrationPage = () => {
   const [formValues, setFormValues] = useState({
     nhsNumber: "",
   });
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormValues((prevValues) => ({
-      ...prevValues,
-      [name]: value,
-    }));
-  e};
+  // const handleInputChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormValues((prevValues) => ({
+  //     ...prevValues,
+  //     [name]: value,
+  //   }));
+  // e};
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -43,7 +43,7 @@ const RegistrationPage = () => {
               label="Enter NHS number"
               name="nhsNumber"
               value={formValues.nhsNumber}
-              onChange={handleInputChange}
+              // onChange={handleInputChange}
               required
             />
       
