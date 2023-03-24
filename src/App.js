@@ -2,14 +2,15 @@ import './App.css';
 import React, { useState } from "react";
 import {
   Fieldset,
-  Input,
+  InputField,
   Button,
   Footer,
   FormGroup,
   Link,
-  Page
+  BackLink,
+  TopNav, Main
 } from "govuk-react";
-//Hello Luka..nskjksjgjkfjhdgjhsdfjshdfg heeelo
+//Hello Luka..nskjksjgjmkfjhdgjhsdfjshdfg heeelo
 const RegistrationPage = () => {
   const [formValues, setFormValues] = useState({
     nhsNumber: "",
@@ -30,7 +31,14 @@ const RegistrationPage = () => {
 
   return (
     <body>
-      <Page>
+      <TopNav>
+        <TopNav.NavLink>Home</TopNav.NavLink>
+      </TopNav>
+
+      <Main>
+      <BackLink onClick={function noRefCheck(){}}>
+        Back
+       </BackLink>
 
       <FormGroup onSubmit={handleSubmit}>
       <p>Your NHS number is a 11 digit number, like 94627888551.</p>
@@ -39,7 +47,7 @@ const RegistrationPage = () => {
         <Fieldset>
           <b>Enter NHS number</b>
         
-            <Input
+            <InputField
               label="Enter NHS number"
               name="nhsNumber"
               value={formValues.nhsNumber}
@@ -51,8 +59,8 @@ const RegistrationPage = () => {
           
         </Fieldset>
       </FormGroup>
-      </Page>
-
+      
+      </Main>
       <div class="footer">
         <Footer>
             <Link href="#">Terms and conditions </Link>
