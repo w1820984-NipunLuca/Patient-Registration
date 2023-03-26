@@ -1,75 +1,50 @@
 import './App.css';
-import React, { useState } from "react";
+import React from "react";
 import {
-  Fieldset,
-  InputField,
   Button,
-  Footer,
-  FormGroup,
-  Link,
-  BackLink,
-  TopNav, 
-  Main
+  Main,
+  H2,
+  BackLink
 } from "govuk-react";
+import Header from './Components/DefaultHeader';
+import Footer from './Components/Footer';
+import { Link } from 'react-router-dom';
 
-const RegistrationPage = () => {
-  const [formValues, setFormValues] = useState({
-    nhsNumber: "",
-  });
-
-  // const handleInputChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setFormValues((prevValues) => ({
-  //     ...prevValues,
-  //     [name]: value,
-  //   }));
-  // e};
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // do something with the form values, e.g. submit to server
+function HomePage() {
+  const handleStaffClick = () => {
+    // Redirect to Staff page
   };
 
   return (
-    <body>
-      <TopNav>
-        <TopNav.NavLink>Home</TopNav.NavLink>
-      </TopNav>
+    <div>
+        <Header />
 
-      <Main>
-        <BackLink onClick={function noRefCheck(){}}>
-          Back
-        </BackLink>
+        <Main>
+            <BackLink onClick={function noRefCheck(){}}>
+              Back
+            </BackLink>
 
-        <FormGroup onSubmit={handleSubmit}>
-        <p>Your NHS number is a 11 digit number, like 94627888551.</p>
-        <p>If you don’t know your NHS number you can select the link below to alternatively register using personal information</p>
+            <div className="box">
+                <H2>Register</H2>
+                <Button>Enter</Button>
+                
+                {/* <Link to="/Register-NHSnumber">
+                  <Button>Enter</Button>
+                </Link> */}
+            </div>
+            <div className="box">
+                <H2>Log In</H2>
+                <Button>Enter</Button>
+            </div>
+            <div className="box">
+                <H2>Staff</H2>
+                <Button onClick={handleStaffClick}>Enter</Button>
+            </div>
+        </Main>
 
-          <Fieldset>
-            <b>Enter NHS number</b>
-          
-              <InputField
-                label="Enter NHS number"
-                name="nhsNumber"
-                value={formValues.nhsNumber}
-                // onChange={handleInputChange}
-                required
-              />
-        
-              <Button>Submit</Button>
-            
-          </Fieldset>
-        </FormGroup>
-      
-      </Main>
-      <div class="footer">
-        <Footer>
-            <Link href="#">Terms and conditions </Link>
-            <Link href="#">Contact us </Link>
-        </Footer>
-      </div>
-    </body>
+        <Footer />
+    </div>
   );
-};
+}
 
-export default RegistrationPage;
+export default HomePage;
