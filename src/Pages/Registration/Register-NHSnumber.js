@@ -1,18 +1,15 @@
-import './App.css';
+
 import React, { useState } from "react";
 import {
   Fieldset,
   InputField,
   Button,
-  Footer,
   FormGroup,
   BackLink,
   Main
 } from "govuk-react";
-import Header from './Components/DefaultHeader';
-import Footer from './Components/Footer';
 
-const RegistrationPage = () => {
+function RegistrationPage(){
   const [formValues, setFormValues] = useState({
     nhsNumber: "",
   });
@@ -32,7 +29,7 @@ const RegistrationPage = () => {
 
   return (
     <div>
-      <Header />
+      
 
       <Main>
         <BackLink onClick={function noRefCheck(){}}>
@@ -60,8 +57,8 @@ const RegistrationPage = () => {
         </FormGroup>
       
       </Main>
+
       
-      <Footer />
     </div>
   );
 };

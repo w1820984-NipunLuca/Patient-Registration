@@ -8,43 +8,56 @@ import {
 } from "govuk-react";
 import Header from './Components/DefaultHeader';
 import Footer from './Components/Footer';
-import { Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link, Navigate } from 'react-router-dom';
+import RegisterNHSNumberPage from './Pages/Registration/Register-NHSnumber';
+import PatientLogInPage from './Pages/Login/PatientLogIn';
 
-function HomePage() {
+function App() {
   const handleStaffClick = () => {
     // Redirect to Staff page
   };
 
   return (
-    <div>
+    
+      <div>
         <Header />
 
         <Main>
-            <BackLink onClick={function noRefCheck(){}}>
-              Back
-            </BackLink>
+          <BackLink onClick={function noRefCheck(){}}>
+            Back
+          </BackLink>
 
-            <div className="box">
-                <H2>Register</H2>
-                <Button>Enter</Button>
-                
-                {/* <Link to="/Register-NHSnumber">
-                  <Button>Enter</Button>
-                </Link> */}
-            </div>
-            <div className="box">
-                <H2>Log In</H2>
-                <Button>Enter</Button>
-            </div>
-            <div className="box">
-                <H2>Staff</H2>
-                <Button onClick={handleStaffClick}>Enter</Button>
-            </div>
+          <div className="box">
+            <H2>Register</H2>
+            <Link to='/RegisterNHSNumberPage'>
+              <Button>Enter</Button>
+            </Link>
+          </div>
+
+          <div className="box">
+            <H2>Log In</H2>
+            
+              <Button>Enter</Button>
+            
+          </div>
+
+          <div className="box">
+            <H2>Staff</H2>
+            <Button onClick={handleStaffClick}>Enter</Button>
+          </div>
         </Main>
 
         <Footer />
+      
+
+      <Routes>
+        <Route path="/RegisterNHSNumberPage" element={<RegisterNHSNumberPage />} />
+        <Route path="/login" element={<PatientLogInPage />} />
+        
+      
+    </Routes>
     </div>
   );
 }
 
-export default HomePage;
+export default App;
