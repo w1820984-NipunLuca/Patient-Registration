@@ -1,4 +1,3 @@
-import './App.css';
 import React, { useState } from "react";
 import {
   Fieldset,
@@ -9,8 +8,8 @@ import {
   Main,
   H2
 } from "govuk-react";
-import Header from './Components/DefaultHeader';
-import Footer from './Components/Footer';
+import Header from '../../Components/DefaultHeader';
+import Footer from '../../Components/Footer';
 
 
 const RegistrationPage = () => {

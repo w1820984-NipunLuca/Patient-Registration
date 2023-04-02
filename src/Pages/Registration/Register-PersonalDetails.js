@@ -1,4 +1,3 @@
-import './App.css';
 import React, { useState } from "react";
 import {
   Fieldset,
@@ -8,8 +7,9 @@ import {
   BackLink,
   Main
 } from "govuk-react";
-import Header from './Components/DefaultHeader';
-import Footer from './Components/Footer';
+import { Link } from "react-router-dom";
+import Header from '../../Components/DefaultHeader';
+import Footer from '../../Components/Footer';
 
 
 const RegistrationPage = () => {
@@ -67,6 +67,9 @@ const RegistrationPage = () => {
           </Fieldset>
         </FormGroup>
       
+        <Link to="/registerNHSnumber" style={{ position: "fixed"}}>
+          Register with NHS number
+        </Link>
       </Main>
       
       <Footer />
