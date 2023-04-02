@@ -8,6 +8,8 @@ import {
   Main
 } from "govuk-react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 import Header from '../../Components/DefaultHeader';
 import Footer from '../../Components/Footer';
 
@@ -24,12 +26,13 @@ const RegistrationPage = () => {
     // do something with the form values, e.g. submit to server
   };
 
+  let history = useNavigate();
+
   return (
     <div>
-      <Header />
-
+      <Header />  
       <Main>
-        <BackLink onClick={function noRefCheck(){}}>
+        <BackLink onClick={() => history(-1)}>
           Back
         </BackLink>
 

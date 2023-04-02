@@ -6,8 +6,8 @@ class Footer extends Component {
     return (
         <div className="footer">
             <FooterLink>
-                <Link href="#">Terms and conditions </Link>
-                <Link href="#">Contact us </Link>
+                <Link href="#">Terms and conditions</Link>
+                <Link href="#">Contact us</Link>
             </FooterLink>
         </div>
     )

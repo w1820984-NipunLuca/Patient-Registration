@@ -8,6 +8,8 @@ import {
   Main
 } from "govuk-react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 import Header from '../../Components/DefaultHeader';
 import Footer from '../../Components/Footer';
 
@@ -21,11 +23,13 @@ function RegistrationPage(){
     // do something with the form values, e.g. submit to server
   };
 
+  let history = useNavigate();
+
   return (
     <div>
       <Header />  
       <Main>
-        <BackLink href="/homepage" onClick={function noRefCheck(){}}>
+        <BackLink onClick={() => history(-1)}>
           Back
         </BackLink>
 
@@ -43,8 +47,10 @@ function RegistrationPage(){
               required
               onChange={(e) => setFormValues({ ...formValues, nhsNumber: e.target.value })}
             />
-    
-            <Button>Enter</Button>
+            
+            <Link to='/registerEmail'>
+              <Button>Enter</Button> 
+            </Link>
           </Fieldset>
         </FormGroup>
 

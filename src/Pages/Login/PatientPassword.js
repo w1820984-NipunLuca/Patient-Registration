@@ -1,3 +1,4 @@
+import '../../App.css';
 import React, { useState } from "react";
 import {
   Fieldset,
@@ -5,7 +6,8 @@ import {
   Button,
   FormGroup,
   BackLink,
-  Main
+  Main,
+  H2
 } from "govuk-react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -35,26 +37,18 @@ const RegistrationPage = () => {
         </BackLink>
 
         <FormGroup onSubmit={handleSubmit}>
-        <p>Password requires: 8 characters or more</p>
+        <div class='login-heading'> <H2>PATIENT</H2></div>
 
           <Fieldset>
             <b>Password</b>
-            <InputField
+              <InputField
                 label="Enter password"
                 name="password"
                 value={formValues.password}
                 // onChange={handleInputChange}
                 required/>
-
-            <b>Confirm Password</b>
-            <InputField
-                label="Confirm password"
-                name="password"
-                value={formValues.password}
-                // onChange={handleInputChange}
-                required/>
-
-              <Link>
+        
+            <Link>
                 <Button>Enter</Button>
               </Link>
           </Fieldset>

@@ -49,3 +49,7 @@
   justify-content: space-between;
   margin-right: 30px;
 }
+
+.login-heading {
+  text-align: center;
+}

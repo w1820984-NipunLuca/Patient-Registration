@@ -5,41 +5,49 @@ import {
   H2,
   BackLink
 } from "govuk-react";
+import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+
 import Header from '../Components/DefaultHeader';
 import Footer from '../Components/Footer';
-import { Link } from 'react-router-dom';
 
 function Homepage() {
-  return (
-    <div>
-      <Header />
+    let history = useNavigate();
 
-      <Main>
-        <BackLink onClick={function noRefCheck(){}}>
-          Back
-        </BackLink>
+    return (
+        <div>
+        <Header />
 
-        <div className="box">
-          <H2>Register</H2>
-          <Link to="/registerNHSnumber">
-            <Button>Enter</Button>
-          </Link>
+        <Main>
+            <BackLink onClick={() => history(-1)}>
+                Back
+            </BackLink>
+
+            <div className="box">
+            <H2>Register</H2>
+            <Link to="/registerNHSnumber">
+                <Button>Enter</Button>
+            </Link>
+            </div>
+
+            <div className="box">
+            <H2>Log In</H2>
+            <Link to="/patientLogIn">
+                <Button>Enter</Button>
+            </Link>
+            </div>
+
+            <div className="box">
+            <H2>Staff</H2>
+            <Link to="/staffLogIn">
+                <Button>Enter</Button>
+            </Link>
+            </div>
+        </Main>
+
+        <Footer />
         </div>
+    );
+    }
 
-        <div className="box">
-          <H2>Log In</H2>
-            <Button>Enter</Button>
-        </div>
-
-        <div className="box">
-          <H2>Staff</H2>
-          <Button>Enter</Button>
-        </div>
-      </Main>
-
-      <Footer />
-    </div>
-  );
-}
-
-export default Homepage;
+    export default Homepage;
