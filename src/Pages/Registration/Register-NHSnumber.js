@@ -28,7 +28,7 @@ function RegistrationPage(){
   };
 
   return (
-    <div>
+    
       
 
       <Main>
@@ -59,7 +59,7 @@ function RegistrationPage(){
       </Main>
 
       
-    </div>
+    
   );
 };
 
